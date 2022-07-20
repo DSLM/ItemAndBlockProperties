@@ -11,6 +11,7 @@ public class BlockPropertiesConfig
     public static ForgeConfigSpec.BooleanValue SHOW_LIGHT;
     
     public static ForgeConfigSpec.BooleanValue SHOW_FRICTION;
+    public static ForgeConfigSpec.DoubleValue HIDE_FRICTION_VALUE;
     
     public static ForgeConfigSpec.BooleanValue SHOW_EXPLOSION_RESISTANCE;
     
@@ -33,21 +34,24 @@ public class BlockPropertiesConfig
                 .translation(BLOCK_CONFIG_STR + STR_LIGHT + ".show")
                 .define(STR_LIGHT + "Show", true);
         CLIENT_BUILDER.pop();
-        
+    
         CLIENT_BUILDER
                 .push(STR_FRICTION);
         SHOW_FRICTION = CLIENT_BUILDER
                 .translation(BLOCK_CONFIG_STR + STR_FRICTION + ".show")
                 .define(STR_FRICTION + "Show", true);
+        HIDE_FRICTION_VALUE = CLIENT_BUILDER
+                .translation(BLOCK_CONFIG_STR + STR_HARDNESS + ".hide")
+                .defineInRange("stackSizeHide", 0.6, Integer.MIN_VALUE, Integer.MAX_VALUE);
         CLIENT_BUILDER.pop();
-        
+    
         CLIENT_BUILDER
                 .push(STR_EXPLOSION_RESISTANCE);
         SHOW_EXPLOSION_RESISTANCE = CLIENT_BUILDER
                 .translation(BLOCK_CONFIG_STR + STR_EXPLOSION_RESISTANCE + ".show")
                 .define(STR_EXPLOSION_RESISTANCE + "Show", true);
         CLIENT_BUILDER.pop();
-        
+    
         CLIENT_BUILDER
                 .push(STR_HARDNESS);
         SHOW_HARDNESS = CLIENT_BUILDER

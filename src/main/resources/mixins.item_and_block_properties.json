@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.dslm.item_and_block_properties.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.item_and_block_properties.refmap.json",
+  "mixins": [
+    "MixinElementText"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}

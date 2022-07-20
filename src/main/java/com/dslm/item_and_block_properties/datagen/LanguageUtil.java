@@ -37,11 +37,12 @@ public class LanguageUtil
     
     
             add(BLOCK_CONFIG_STR + STR_FLAMMABLE + ".show", "Show flammability", "显示可燃性");
-            add(BLOCK_CONFIG_STR + STR_LIGHT + ".show", "Show Light Level", "显示亮度");
-            add(BLOCK_CONFIG_STR + STR_FRICTION + ".show", "Show Friction", "显示摩擦力");
-            add(BLOCK_CONFIG_STR + STR_EXPLOSION_RESISTANCE + ".show", "Show Friction", "显示摩擦力");
-            add(BLOCK_CONFIG_STR + STR_HARDNESS + ".show", "Show Hardness", "显示硬度");
-            add(BLOCK_CONFIG_STR + STR_DESTROY_TIME + ".show", "Show Destroy Time", "显示破坏时间");
+            add(BLOCK_CONFIG_STR + STR_LIGHT + ".show", "Show light level", "显示亮度");
+            add(BLOCK_CONFIG_STR + STR_FRICTION + ".show", "Show friction", "显示摩擦力");
+            add(BLOCK_CONFIG_STR + STR_EXPLOSION_RESISTANCE + ".show", "Show friction", "显示摩擦力");
+            add(BLOCK_CONFIG_STR + STR_HARDNESS + ".hide", "Hide the friction with this value", "隐藏此数值的方块摩擦力");
+            add(BLOCK_CONFIG_STR + STR_HARDNESS + ".show", "Show hardness", "显示硬度");
+            add(BLOCK_CONFIG_STR + STR_DESTROY_TIME + ".show", "Show destroy time", "显示破坏时间");
         }
         
         //tooltip

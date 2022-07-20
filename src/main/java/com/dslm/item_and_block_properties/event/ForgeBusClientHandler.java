@@ -5,7 +5,7 @@ import com.dslm.item_and_block_properties.util.StaticValue;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.BlockItem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -20,12 +20,12 @@ public class ForgeBusClientHandler
     @SubscribeEvent
     public static void onItemToolTipAdded(ItemTooltipEvent event)
     {
-        List<Component> list = PropertiesGetter.getItemProperties(event.getItemStack());
+        List<TranslatableComponent> list = PropertiesGetter.getItemProperties(event.getItemStack());
         if(event.getItemStack().getItem() instanceof BlockItem blockItem)
         {
             PropertiesGetter.getBlockProperties(blockItem.getBlock().defaultBlockState(), Minecraft.getInstance().level, BlockPos.ZERO, Direction.UP, event.getPlayer())
                     .forEach(pair -> {
-                        if(StaticValue.clientConfigDisplayCheck(pair.getFirst()))
+                        if(StaticValue.clientConfigDisplayCheck(pair.getFirst(), pair.getSecond()))
                             list.add(pair.getSecond());
                     });
         }

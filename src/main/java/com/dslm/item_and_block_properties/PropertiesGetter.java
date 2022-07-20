@@ -3,7 +3,6 @@ package com.dslm.item_and_block_properties;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -20,12 +19,12 @@ import static com.dslm.item_and_block_properties.util.StaticValue.*;
 
 public class PropertiesGetter
 {
-    public static List<Pair<String, Component>> getBlockProperties(BlockState blockState, Level level, BlockPos pos, Direction face, Player player)
+    public static List<Pair<String, TranslatableComponent>> getBlockProperties(BlockState blockState, Level level, BlockPos pos, Direction face, Player player)
     {
-        ArrayList<Pair<String, Component>> list = new ArrayList<>();
-        
+        ArrayList<Pair<String, TranslatableComponent>> list = new ArrayList<>();
+    
         Block block = blockState.getBlock();
-        
+    
         list.add(Pair.of(STR_FLAMMABLE,
                 colorfulText(
                         new TranslatableComponent(BLOCK_TOOLTIP_STR + STR_FLAMMABLE + "." + blockState.isFlammable(level, pos, face)),
@@ -75,9 +74,9 @@ public class PropertiesGetter
         return list;
     }
     
-    public static List<Component> getItemProperties(ItemStack itemStack)
+    public static List<TranslatableComponent> getItemProperties(ItemStack itemStack)
     {
-        ArrayList<Component> list = new ArrayList<>();
+        ArrayList<TranslatableComponent> list = new ArrayList<>();
         
         Item item = itemStack.getItem();
         

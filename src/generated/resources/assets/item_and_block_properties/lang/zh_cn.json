@@ -3,6 +3,7 @@
   "config.item_and_block_properties.block.explosion_resistance.show": "\u663E\u793A\u6469\u64E6\u529B",
   "config.item_and_block_properties.block.flammable.show": "\u663E\u793A\u53EF\u71C3\u6027",
   "config.item_and_block_properties.block.friction.show": "\u663E\u793A\u6469\u64E6\u529B",
+  "config.item_and_block_properties.block.hardness.hide": "\u9690\u85CF\u6B64\u6570\u503C\u7684\u65B9\u5757\u6469\u64E6\u529B",
   "config.item_and_block_properties.block.hardness.show": "\u663E\u793A\u786C\u5EA6",
   "config.item_and_block_properties.block.light.show": "\u663E\u793A\u4EAE\u5EA6",
   "config.item_and_block_properties.item.stack_size.damage": "\u663E\u793A\u8010\u4E45\u5EA6",

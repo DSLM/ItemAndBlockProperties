@@ -37,7 +37,7 @@ public class StaticValue
         return (TranslatableComponent) text.withStyle(style -> style.withColor(TextColor.fromRgb(color)));
     }
     
-    public static boolean clientConfigDisplayCheck(String key)
+    public static boolean clientConfigDisplayCheck(String key, TranslatableComponent component)
     {
         switch(key)
         {
@@ -48,7 +48,10 @@ public class StaticValue
                 return SHOW_LIGHT.get();
             }
             case STR_FRICTION -> {
-                return SHOW_FRICTION.get();
+                return SHOW_FRICTION.get()
+                        && !(component != null
+                        && (BLOCK_TOOLTIP_STR + STR_FRICTION).equals(component.getKey())
+                        && HIDE_FRICTION_VALUE.get() == Double.parseDouble(component.getArgs()[0].toString()));
             }
             case STR_EXPLOSION_RESISTANCE -> {
                 return SHOW_EXPLOSION_RESISTANCE.get();

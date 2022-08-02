@@ -21,7 +21,7 @@ public class ForgeBusClientHandler
     public static void onItemToolTipAdded(ItemTooltipEvent event)
     {
         List<TranslatableComponent> list = PropertiesGetter.getItemProperties(event.getItemStack());
-        if(event.getItemStack().getItem() instanceof BlockItem blockItem)
+        if(event.getItemStack().getItem() instanceof BlockItem blockItem && Minecraft.getInstance().level != null)
         {
             PropertiesGetter.getBlockProperties(blockItem.getBlock().defaultBlockState(), Minecraft.getInstance().level, BlockPos.ZERO, Direction.UP, event.getPlayer())
                     .forEach(pair -> {
